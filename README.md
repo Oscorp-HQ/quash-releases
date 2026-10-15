@@ -10,7 +10,7 @@ Linux (amd64, arm64) and macOS on Apple Silicon:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/Oscorp-HQ/quash-releases/main/install.sh \
-  | bash -s -- -v v0.0.1-preview.2 -noRoot
+  | bash -s -- -v v0.0.1-preview.4 -noRoot
 ```
 
 - `-noRoot` installs to `$HOME/.quash/bin`. Leave it out to install to `/usr/local/bin` (uses `sudo`).
@@ -32,6 +32,6 @@ cosign verify-blob \
 
 Each release also carries an SPDX SBOM (`*.spdx.json`) for every binary and container image.
 
-## Known limits of this preview
+## macOS
 
-- The macOS binary is not yet Apple-signed or notarized. Installing with the script works. A binary downloaded in a browser will trigger a Gatekeeper warning.
+From `v0.0.1-preview.4`, the macOS binaries are signed with an Apple Developer ID and notarized by Apple. A copy downloaded in a browser runs without a Gatekeeper warning. (`v0.0.1-preview.2` is unsigned.)
